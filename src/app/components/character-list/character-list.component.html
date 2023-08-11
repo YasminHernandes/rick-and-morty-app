@@ -1,0 +1,29 @@
+<ul class="character-list list">
+  <li class="character-block {{character.type}}" *ngFor="let character of characters">
+    <img class="character-image" src={{character.image}} alt="">
+    <div class="container-details">
+      <div class="container-identification">
+        <span class="character-id">{{character.id}}</span>
+        <span class="character-name">{{character.name}}</span>
+      </div>
+      <ul class="character-details">
+        <li class="detail status">
+          <span class="detail-title">Status</span>
+          <span class="detail-value">{{character.status}}</span>
+        </li>
+        <li class="detail species">
+          <span class="detail-title">Espécie</span>
+          <span class="detail-value">{{character.species}}</span>
+        </li>
+        <li class="detail gender">
+          <span class="detail-title">Gênero</span>
+          <span class="detail-value">{{character.gender}}</span>
+        </li>
+      </ul>
+      <a class="seeMore" routerLink="/character/{{character.id}}">Ver mais</a>
+    </div>
+    <div class="detail">
+
+    </div>
+  </li>
+</ul>

@@ -1,0 +1,53 @@
+<div class="character-block">
+  <img src={{character?.image}} alt="{{character?.name}}" class="character-image">
+  <div class="character-details">
+    <div class="character-identification">
+      <div class="character-identification-created">
+        <span class="character-name">{{character?.name}}</span>
+        <span class="character-created">Criado em: {{character?.created | date}}</span>
+      </div>
+      <span class="character-id">#{{character?.id}}</span>
+    </div>
+    <ul class="character-details-list">
+      <li class="detail status">
+        <span class="detail-title">Status</span>
+        <span class="detail-value">{{
+          character?.status === "" ? "S/D" : character?.status
+          }}
+        </span>
+      </li>
+      <li class="detail species">
+        <span class="detail-title">Espécie</span>
+        <span class="detail-value">{{character?.species}}</span>
+      </li>
+      <li class="detail gender">
+        <span class="detail-title">Gênero</span>
+        <span class="detail-value">{{character?.gender}}</span>
+      </li>
+      <li class="detail type">
+        <span class="detail-title">Tipo</span>
+        <span class="detail-value">{{
+          character?.type === '' ? "Sem tipo" : character?.type
+          }}
+        </span>
+      </li>
+      <li class="detail origin">
+        <span class="detail-title">Origem</span>
+        <span class="detail-value">{{character?.origin?.name}}</span>
+      </li>
+      <li class="detail location">
+        <span class="detail-title">Localização</span>
+        <span class="detail-value">{{character?.location?.name}}</span>
+      </li>
+    </ul>
+    <ul class="character-episodes">
+      <span class="character-episodes--title" (click)="handleEpisodes()">
+        Episódios
+        <img class="nav-arrow" src="./assets/svg/navarrow.svg" alt="nav-arrow">
+      </span>
+      <li class="episodes none" *ngFor="let episode of episodes">
+        <span class="episode-info">{{episode?.id}} - {{episode?.name}}</span>
+      </li>
+    </ul>
+  </div>
+</div>

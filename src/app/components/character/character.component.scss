@@ -1,0 +1,96 @@
+.character-block {
+  width: 70%;
+  max-width: 1300px;
+  box-shadow: 2px 4px 8px #e4e4e4;
+  border-radius: .5rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 1rem auto;
+
+  @media screen and (max-width: 1025.98px) {
+    flex-wrap: wrap;
+  }
+
+  .character-image {
+    width: 300px;
+    height: 300px;
+
+    @media screen and (max-width: 768px) {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+    }
+  }
+
+  .character-details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .character-identification {
+      display: flex;
+      justify-content: space-between;
+
+      .character-identification-created {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+
+        .character-created {
+          color: #9f9f9f;
+          font-size: .9rem;
+        }
+      }
+
+      .character-id {
+        color: #9f9f9f
+      }
+      .character-name {
+        font-weight: 600;
+      }
+    }
+
+    .character-details-list {
+      .detail {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .detail-value {
+          text-align: right;
+        }
+      }
+      .detail:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+
+      .detail-title {
+        font-weight: 600;
+      }
+    }
+
+    .character-episodes {
+      .character-episodes--title {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        cursor: pointer;
+
+        .nav-arrow {
+          width: 20px;
+        }
+      }
+      .episodes {
+        &.none {
+          display: none;
+        }
+      }
+    }
+  }
+
+}
